@@ -5,5 +5,6 @@ import { CrustsController } from './crusts.controller';
 @Module({
   providers: [CrustService],
   controllers: [CrustsController],
+  exports: [CrustService],
 })
 export class CrustsModule {}

@@ -4,6 +4,7 @@ import { CrustsModule } from './crusts/crusts.module';
 import { DoughModule } from './dough/dough.module';
 import { FillingsModule } from './fillings/fillings.module';
 import { SizesModule } from './sizes/sizes.module';
+import { DaySuggestionModule } from './day-suggestion/day-suggestion.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { SizesModule } from './sizes/sizes.module';
     DoughModule,
     FillingsModule,
     SizesModule,
+    DaySuggestionModule,
   ],
 })
 export class AppModule {}

@@ -5,5 +5,6 @@ import { DoughController } from './dough.controller';
 @Module({
   providers: [DoughService],
   controllers: [DoughController],
+  exports: [DoughService],
 })
 export class DoughModule {}
