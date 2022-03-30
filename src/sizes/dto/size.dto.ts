@@ -1,4 +1,4 @@
-export class Size {
+export class SizeDto {
   description: string;
   slices: number;
 }

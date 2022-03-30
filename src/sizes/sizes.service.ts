@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Size } from './dto';
+import { SizeDto } from './dto';
 
 @Injectable()
 export class SizeService {
-  async findAll(): Promise<Size[]> {
+  async findAll(): Promise<SizeDto[]> {
     const sizes = [
       { description: 'Pequena', slices: 6 },
       { description: 'Média', slices: 8 },
