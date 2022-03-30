@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Filling } from './dto';
 
 @Injectable()
-export class FillingsService {
+export class FillingService {
   async findAll(): Promise<Filling[]> {
     const fillings: Filling[] = [
       {

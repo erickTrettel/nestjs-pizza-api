@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { FillingsService } from './fillings.service';
+import { FillingService } from './fillings.service';
 
 @Controller('fillings')
 export class FillingsController {
-  constructor(private service: FillingsService) {}
+  constructor(private service: FillingService) {}
 
   @Get()
   getAll() {
