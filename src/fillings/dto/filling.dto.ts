@@ -1,8 +1,8 @@
-class Ingredient {
+class IngredientDto {
   description: string;
 }
 
-export class Filling {
+export class FillingDto {
   description: string;
-  ingredients: Ingredient[];
+  ingredients: IngredientDto[];
 }

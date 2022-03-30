@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { Filling } from './dto';
+import { FillingDto } from './dto';
 
 @Injectable()
 export class FillingService {
-  async findAll(): Promise<Filling[]> {
-    const fillings: Filling[] = [
+  async findAll(): Promise<FillingDto[]> {
+    const fillings: FillingDto[] = [
       {
         description: 'Mussarela',
         ingredients: [
