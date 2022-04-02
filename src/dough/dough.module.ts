@@ -3,10 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { DoughService } from './dough.service';
 import { DoughController } from './dough.controller';
-import { DoughDto } from './dto';
+import { Dough } from './entities';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([DoughDto])],
+  imports: [TypeOrmModule.forFeature([Dough])],
   providers: [DoughService],
   controllers: [DoughController],
   exports: [DoughService],
