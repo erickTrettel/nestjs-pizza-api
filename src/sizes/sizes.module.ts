@@ -3,10 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { SizeService } from './sizes.service';
 import { SizesController } from './sizes.controller';
-import { SizeDto } from './dto';
+import { Size } from './entities';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([SizeDto])],
+  imports: [TypeOrmModule.forFeature([Size])],
   providers: [SizeService],
   controllers: [SizesController],
   exports: [SizeService],
