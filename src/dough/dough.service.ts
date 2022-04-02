@@ -1,11 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { DoughDto } from './dto';
 
 @Injectable()
 export class DoughService {
-  async findAll(): Promise<DoughDto[]> {
-    const dough: DoughDto[] = [{ description: 'Massa de pizza' }];
+  constructor(
+    @InjectRepository(DoughDto) private repository: Repository<DoughDto>,
+  ) {}
 
-    return dough;
+  findAll(): Promise<DoughDto[]> {
+    return this.repository.find();
   }
 }
