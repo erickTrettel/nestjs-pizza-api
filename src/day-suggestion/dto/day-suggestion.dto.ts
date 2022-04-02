@@ -1,11 +1,11 @@
 import { Crust } from 'src/crusts/entities';
 import { Dough } from 'src/dough/entities';
-import { FillingDto } from 'src/fillings/dto';
+import { Filling } from 'src/fillings/entities';
 import { Size } from 'src/sizes/entities';
 
 export class PizzaDto {
   dough: Dough;
   crust: Crust;
-  filling: FillingDto;
+  filling: Filling;
   size: Size;
 }
