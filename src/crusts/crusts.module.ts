@@ -3,10 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { CrustService } from './crusts.service';
 import { CrustsController } from './crusts.controller';
-import { CrustDto } from './dto';
+import { Crust } from './entities';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([CrustDto])],
+  imports: [TypeOrmModule.forFeature([Crust])],
   providers: [CrustService],
   controllers: [CrustsController],
   exports: [CrustService],

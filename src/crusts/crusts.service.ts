@@ -1,15 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CrustDto, CreateCrustDto } from './dto';
+import { CreateCrustDto } from './dto';
+import { Crust } from './entities';
 
 @Injectable()
 export class CrustService {
-  constructor(
-    @InjectRepository(CrustDto) private repository: Repository<CrustDto>,
-  ) {}
+  constructor(@InjectRepository(Crust) private repository: Repository<Crust>) {}
 
-  findAll(): Promise<CrustDto[]> {
+  findAll(): Promise<Crust[]> {
     return this.repository.find();
   }
 

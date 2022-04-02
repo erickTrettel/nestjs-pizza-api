@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'crusts' })
-export class CrustDto {
+export class Crust {
   @PrimaryGeneratedColumn()
   id: number;
 
