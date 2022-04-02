@@ -8,10 +8,6 @@ import { FillingsModule } from './fillings/fillings.module';
 import { SizesModule } from './sizes/sizes.module';
 import { DaySuggestionModule } from './day-suggestion/day-suggestion.module';
 
-import { CrustDto } from './crusts/dto';
-import { SizeDto } from './sizes/dto';
-import { DoughDto } from './dough/dto';
-
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -22,7 +18,7 @@ import { DoughDto } from './dough/dto';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [CrustDto, SizeDto, DoughDto],
+      autoLoadEntities: true,
       synchronize: process.env.NODE_ENV === 'development',
     }),
     CrustsModule,
