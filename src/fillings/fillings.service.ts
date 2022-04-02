@@ -1,60 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { FillingDto } from './dto';
 
 @Injectable()
 export class FillingService {
-  async findAll(): Promise<FillingDto[]> {
-    const fillings: FillingDto[] = [
-      {
-        description: 'Mussarela',
-        ingredients: [
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Parmesão ralado' },
-          { description: 'Azeitona verde' },
-          { description: 'Orégano' },
-        ],
-      },
-      {
-        description: 'Marguerita',
-        ingredients: [
-          { description: 'Azeite' },
-          { description: 'Goma de tapioca' },
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Tomate' },
-          { description: 'Manjericão' },
-          { description: 'Orégano' },
-        ],
-      },
-      {
-        description: 'Calabresa',
-        ingredients: [
-          { description: 'Ovo' },
-          { description: 'Azeite' },
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Linguiça calabresa' },
-          { description: 'Cebola' },
-          { description: 'Azeitona verde' },
-          { description: 'Orégano' },
-        ],
-      },
-      {
-        description: 'Portuguesa',
-        ingredients: [
-          { description: 'Ovo' },
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Presunto ralado' },
-          { description: 'Cebola' },
-          { description: 'Tomate' },
-          { description: 'Azeitona verde' },
-          { description: 'Orégano' },
-        ],
-      },
-    ];
+  constructor(
+    @InjectRepository(FillingDto) private repository: Repository<FillingDto>,
+  ) {}
 
-    return fillings;
+  async findAll(): Promise<FillingDto[]> {
+    return this.repository.find();
   }
 }
