@@ -6,55 +6,196 @@
 	},
 	"item": [
 		{
-			"name": "Get dough",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/dough",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"dough"
-					]
+			"name": "Crusts",
+			"item": [
+				{
+					"name": "Get crusts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/crusts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"crusts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create crust",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Vulcão\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/crusts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"crusts"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get crusts",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/crusts",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"crusts"
-					]
+			"name": "Dough",
+			"item": [
+				{
+					"name": "Get dough",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/dough",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dough"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create dough",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Massa de pizza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/dough",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dough"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get fillings",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/fillings",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"fillings"
-					]
+			"name": "Sizes",
+			"item": [
+				{
+					"name": "Get sizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sizes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sizes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create size",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Gigante\",\r\n    \"slices\": 16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sizes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sizes"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Fillings",
+			"item": [
+				{
+					"name": "Get fillings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/fillings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fillings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create filling",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Mussarela\",\r\n    \"ingredients\": [\r\n        { \"description\": \"Molho de tomate\" },\r\n        { \"description\": \"Mussarela ralada\" },\r\n        { \"description\": \"Parmesão ralado\" },\r\n        { \"description\": \"Azeitona verde\" },\r\n        { \"description\": \"Orégano\" }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/fillings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fillings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Get day suggestion",
@@ -87,23 +228,6 @@
 					"path": [
 						"day_suggestion",
 						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get sizes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/sizes",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"sizes"
 					]
 				}
 			},
