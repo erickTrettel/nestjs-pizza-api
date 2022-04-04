@@ -1,1 +1,1 @@
-export * from './dough.dto';
+export * from './create-dough.dto';

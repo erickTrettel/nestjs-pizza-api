@@ -1,1 +1,1 @@
-export * from './size.dto';
+export * from './create-size.dto';

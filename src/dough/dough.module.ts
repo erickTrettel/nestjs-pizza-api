@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { DoughService } from './dough.service';
 import { DoughController } from './dough.controller';
+import { Dough } from './entities';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([Dough])],
   providers: [DoughService],
   controllers: [DoughController],
   exports: [DoughService],

@@ -1,11 +1,11 @@
-import { CrustDto } from 'src/crusts/dto';
-import { DoughDto } from 'src/dough/dto';
-import { FillingDto } from 'src/fillings/dto';
-import { SizeDto } from 'src/sizes/dto';
+import { Crust } from 'src/crusts/entities';
+import { Dough } from 'src/dough/entities';
+import { Filling } from 'src/fillings/entities';
+import { Size } from 'src/sizes/entities';
 
 export class PizzaDto {
-  dough: DoughDto;
-  crust: CrustDto;
-  filling: FillingDto;
-  size: SizeDto;
+  dough: Dough;
+  crust: Crust;
+  filling: Filling;
+  size: Size;
 }

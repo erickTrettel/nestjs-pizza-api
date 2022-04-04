@@ -1,17 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { SizeDto } from './dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+
+import { CreateSizeDto } from './dto';
+import { Size } from './entities';
 
 @Injectable()
 export class SizeService {
-  async findAll(): Promise<SizeDto[]> {
-    const sizes = [
-      { description: 'Pequena', slices: 6 },
-      { description: 'Média', slices: 8 },
-      { description: 'Grande', slices: 10 },
-      { description: 'Família', slices: 12 },
-      { description: 'Gigante', slices: 16 },
-    ];
+  constructor(@InjectRepository(Size) private repository: Repository<Size>) {}
 
-    return sizes;
+  findAll(): Promise<Size[]> {
+    return this.repository.find();
+  }
+
+  create(dto: CreateSizeDto) {
+    return this.repository.save(dto);
   }
 }
