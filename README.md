@@ -32,3 +32,12 @@ Esta API ainda não está em produção. Mais informações em breve...
 | POST   | /crusts              | Cria uma nova borda              |
 | GET    | /day_suggestion/:day | Busca a sugestao de pizza do dia |
 | POST   | /day_suggestion/:day | Seleciona a pizza do dia         |
+
+## Progresso
+
+- [x] Banco de dados
+- [ ] Validação de dados
+- [ ] Testes
+- [ ] Autenticação com JWT
+- [ ] Cache
+- [ ] Logs
