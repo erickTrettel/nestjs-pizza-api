@@ -9,6 +9,6 @@ export class Ingredient {
   @Column()
   description: string;
 
-  @ManyToOne((type) => Filling)
+  @ManyToOne(() => Filling)
   filling: Filling;
 }

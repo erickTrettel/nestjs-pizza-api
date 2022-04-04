@@ -9,6 +9,6 @@ export class Filling {
   @Column()
   description: string;
 
-  @OneToMany((type) => Ingredient, (ingredient) => ingredient.filling)
+  @OneToMany(() => Ingredient, (ingredient) => ingredient.filling)
   ingredients: Ingredient[];
 }
