@@ -6,6 +6,9 @@ Esta API é um mock para que [este portal](https://github.com/erickTrettel/pizza
 
 Para executar o projeto, após fazer o clone deste repositório, você pode instalar as dependências necessárias
 com o comando `yarn` e depois executar o comando `yarn start:dev`.
+Esta aplicação se conecta com um banco de dados MySQL, que deve rodar localmente. Você precisa ter um servidor
+MySQL rodando, e pode infomar as credenciais de conexão em um arquivo `.env`, seguindo o exemplo do arquivo
+`.env.example`.
 
 ## Documentação
 
