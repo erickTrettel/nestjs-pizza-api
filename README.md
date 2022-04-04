@@ -16,15 +16,19 @@ Dentro do projeto, você pode conferir um arquivo de importação para o Postman
 
 ## Produção
 
-Você pode fazer requisições para esse projeto através [desta URL](https://pizza-step-form-api.herokuapp.com).
+Esta API ainda não está em produção. Mais informações em breve...
 
 ## Endpoints
 
 | Método | URL                  | Descrição                        |
 | ------ | -------------------- | -------------------------------- |
 | GET    | /dough               | Busca as massas disponíveis      |
+| POST   | /dough               | Cria uma nova massa              |
 | GET    | /sizes               | Busca os tamanhos disponíveis    |
+| POST   | /sizes               | Cria um novo tamanho             |
 | GET    | /fillings            | Busca os recheios disponíveis    |
+| POST   | /fillings            | Cria um novo recheio             |
 | GET    | /crusts              | Busca as bordas disponíveis      |
+| POST   | /crusts              | Cria uma nova borda              |
 | GET    | /day_suggestion/:day | Busca a sugestao de pizza do dia |
 | POST   | /day_suggestion/:day | Seleciona a pizza do dia         |
