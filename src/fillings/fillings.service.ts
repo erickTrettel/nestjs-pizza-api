@@ -1,60 +1,32 @@
 import { Injectable } from '@nestjs/common';
-import { FillingDto } from './dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+
+import { CreateFillingDto } from './dto';
+import { Filling, Ingredient } from './entities';
 
 @Injectable()
 export class FillingService {
-  async findAll(): Promise<FillingDto[]> {
-    const fillings: FillingDto[] = [
-      {
-        description: 'Mussarela',
-        ingredients: [
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Parmesão ralado' },
-          { description: 'Azeitona verde' },
-          { description: 'Orégano' },
-        ],
-      },
-      {
-        description: 'Marguerita',
-        ingredients: [
-          { description: 'Azeite' },
-          { description: 'Goma de tapioca' },
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Tomate' },
-          { description: 'Manjericão' },
-          { description: 'Orégano' },
-        ],
-      },
-      {
-        description: 'Calabresa',
-        ingredients: [
-          { description: 'Ovo' },
-          { description: 'Azeite' },
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Linguiça calabresa' },
-          { description: 'Cebola' },
-          { description: 'Azeitona verde' },
-          { description: 'Orégano' },
-        ],
-      },
-      {
-        description: 'Portuguesa',
-        ingredients: [
-          { description: 'Ovo' },
-          { description: 'Molho de tomate' },
-          { description: 'Mussarela ralada' },
-          { description: 'Presunto ralado' },
-          { description: 'Cebola' },
-          { description: 'Tomate' },
-          { description: 'Azeitona verde' },
-          { description: 'Orégano' },
-        ],
-      },
-    ];
+  constructor(
+    @InjectRepository(Filling) private fillingRepository: Repository<Filling>,
+    @InjectRepository(Ingredient)
+    private ingredientRepository: Repository<Ingredient>,
+  ) {}
 
-    return fillings;
+  findAll(): Promise<Filling[]> {
+    return this.fillingRepository.find();
+  }
+
+  async create(dto: CreateFillingDto) {
+    const filling = await this.fillingRepository.save(dto);
+
+    await this.ingredientRepository.save(
+      dto.ingredients.map((ingredient) => ({
+        filling,
+        ...ingredient,
+      })),
+    );
+
+    return filling;
   }
 }

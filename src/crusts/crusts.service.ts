@@ -1,17 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { CrustDto } from './dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { CreateCrustDto } from './dto';
+import { Crust } from './entities';
 
 @Injectable()
 export class CrustService {
-  async findAll(): Promise<CrustDto[]> {
-    const crusts: CrustDto[] = [
-      { description: 'Borda simples' },
-      { description: 'Gravata borboleta' },
-      { description: 'Corda' },
-      { description: 'Estrela' },
-      { description: 'Vulcão' },
-    ];
+  constructor(@InjectRepository(Crust) private repository: Repository<Crust>) {}
 
-    return crusts;
+  findAll(): Promise<Crust[]> {
+    return this.repository.find();
+  }
+
+  create(dto: CreateCrustDto) {
+    return this.repository.save(dto);
   }
 }
