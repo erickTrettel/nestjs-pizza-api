@@ -41,3 +41,4 @@ Esta API ainda não está em produção. Mais informações em breve...
 - [ ] Autenticação com JWT
 - [ ] Cache
 - [ ] Logs
+- [ ] Docker
