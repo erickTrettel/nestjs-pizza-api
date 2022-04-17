@@ -1,14 +1,22 @@
 # Pizza step form API
 
-Esta API é um mock para que [este portal](https://github.com/erickTrettel/pizza-step-form-portal) possa consumir seus dados.
+Esta API é um servidor para que [este portal](https://github.com/erickTrettel/pizza-step-form-portal) possa consumir seus dados.
 
 ## Como rodar?
+
+### Local
 
 Para executar o projeto, após fazer o clone deste repositório, você pode instalar as dependências necessárias
 com o comando `yarn` e depois executar o comando `yarn start:dev`.
 Esta aplicação se conecta com um banco de dados MySQL, que deve rodar localmente. Você precisa ter um servidor
 MySQL rodando, e pode infomar as credenciais de conexão em um arquivo `.env`, seguindo o exemplo do arquivo
 `.env.example`.
+
+### Docker
+
+Para executar esse projeto via docker, você primeiro irá precisar criar um novo diretório *.docker/mysql* e dar as permissões
+necessárias utilizando o comando `chmod +x .docker/entrypoint.sh`. Depois, pode apenas rodar o comando `docker-compose up -d --build`
+e terá dois containers rodando em paralelo, sendo um deles a aplicação *nest* na porta 3333, e o outro, o banco de dados *mysql*.
 
 ## Documentação
 
@@ -36,9 +44,9 @@ Esta API ainda não está em produção. Mais informações em breve...
 ## Progresso
 
 - [x] Banco de dados
+- [x] Docker
 - [ ] Validação de dados
 - [ ] Testes
 - [ ] Autenticação com JWT
 - [ ] Cache
 - [ ] Logs
-- [ ] Docker
