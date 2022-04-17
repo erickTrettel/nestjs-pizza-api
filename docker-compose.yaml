@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    entrypoint: .docker/entrypoint.sh
+    container_name: pizza-app
+    ports:
+      - "3333:3333"
+    volumes:
+      - .:/home/node/app
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=pizza
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    container_name: pizza-db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - .docker/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pizza
