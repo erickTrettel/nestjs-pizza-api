@@ -45,7 +45,7 @@ Esta API ainda não está em produção. Mais informações em breve...
 
 - [x] Banco de dados
 - [x] Docker
-- [ ] Validação de dados
+- [x] Validação de dados
 - [ ] Testes
 - [ ] Autenticação com JWT
 - [ ] Cache

@@ -14,7 +14,7 @@ export class FillingService {
   ) {}
 
   findAll(): Promise<Filling[]> {
-    return this.fillingRepository.find();
+    return this.fillingRepository.find({ relations: ['ingredients'] });
   }
 
   async create(dto: CreateFillingDto) {
