@@ -14,9 +14,9 @@ MySQL rodando, e pode infomar as credenciais de conexão em um arquivo `.env`, s
 
 ### Docker
 
-Para executar esse projeto via docker, você primeiro irá precisar criar um novo diretório *.docker/mysql* e dar as permissões
+Para executar esse projeto via docker, você primeiro irá precisar criar um novo diretório _.docker/mysql_ e dar as permissões
 necessárias utilizando o comando `chmod +x .docker/entrypoint.sh`. Depois, pode apenas rodar o comando `docker-compose up -d --build`
-e terá dois containers rodando em paralelo, sendo um deles a aplicação *nest* na porta 3333, e o outro, o banco de dados *mysql*.
+e terá dois containers rodando em paralelo, sendo um deles a aplicação _nest_ na porta 3333, e o outro, o banco de dados _mysql_.
 
 ## Documentação
 
@@ -46,7 +46,7 @@ Esta API ainda não está em produção. Mais informações em breve...
 - [x] Banco de dados
 - [x] Docker
 - [x] Validação de dados
+- [x] Cache
 - [ ] Testes
 - [ ] Autenticação com JWT
-- [ ] Cache
 - [ ] Logs
